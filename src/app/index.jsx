@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from "react";
+import moment from "moment";
+import Calendar from "./calendar";
 
-const hello = () => <div>Hello</div>
-
-export default hello;
+export default function () {
+  const [selectedDate, setSelectedDate] = useState(moment());
+  return <Calendar value={selectedDate} onChange={setSelectedDate} />;
+}
